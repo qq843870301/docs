@@ -1,7 +1,9 @@
+cd ./dist
 
+git init
 
-git add .
+git add -A
 
-git commit -m "更新代码"
+git commit -m 'deploy'
 
 git push -f git@github.com:qq843870301/qq843870301.github.io.git master
