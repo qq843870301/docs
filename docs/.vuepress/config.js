@@ -2,7 +2,7 @@ module.exports = {
   title: '网站标题',
   // base: 网站域名前缀对应自己的GitHub仓库名称
   // 一定要以/开头结尾，不然会出现资源找不到
-  base: '/docs/dist',
+  base: '/docs/dist/',
   dest: './dist',  // 打包文件夹
   description: 'description',
   markdown: {
