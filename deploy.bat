@@ -1,8 +1,7 @@
-# 生成静态文件
-npm run docs:build
+
 
 git add .
 
 git commit -m "更新代码"
 
-git push
+git push -f git@github.com:qq843870301/qq843870301.github.io.git master
