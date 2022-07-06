@@ -2,9 +2,9 @@ module.exports = {
   // 部署站点的基础路径，如果你想让你的网站部署到一个子路径下，你将需要设置它。如 GitHub pages，如果你想将你的网站部署到 https://foo.github.io/bar/，那么 base 应该被设置成 "/bar/"，它的值应当总是以斜杠开始，并以斜杠结束。
   base: '/',
   // 网站的标题，它将会被用作所有页面标题的前缀，同时，默认主题下，它将显示在导航栏（navbar）上。
-  title: '网站标题',
+  title: 'Lucky',
   // 网站的描述，它将会以 <meta> 标签渲染到当前页面的 HTML 中。
-  description: 'description',
+  description: '',
   // 额外的需要被注入到当前页面的 HTML <head> 中的标签，每个标签都可以以 [tagName, { attrName: attrValue }, innerHTML?] 的格式指定，举个例子，增加一个自定义的 favicon：
   head: [
     [
@@ -16,9 +16,9 @@ module.exports = {
     ],
   ],
   // 指定用于 dev server 的主机名。
-  host:"0.0.0.0",
+  host: "0.0.0.0",
   // 指定 dev server 的端口。
-  port:8080,
+  port: 8080,
   // 指定客户端文件的临时目录。
   // temp:"/path/to/@vuepress/core/.temp",
   // 打包文件夹
@@ -35,9 +35,10 @@ module.exports = {
     lineNumbers: true,
   },
   // 当你使用自定义主题的时候，需要指定它。https://vuepress.vuejs.org/zh/theme/using-a-theme.html
-  theme:"",
+  theme: "",
   themeConfig: {
-    smoothScroll:true,
+    logo: '/home.png',
+    smoothScroll: true,
     lastUpdated: '上次更新',  // 博客文章底部添加更新时间
     serviceWorker: {
       updatePopup: true,
@@ -46,37 +47,40 @@ module.exports = {
         buttonText: '点击更新'
       }
     },
-    sidebarDepth: 2, // 侧边栏深度
     displayAllHeaders: true,
     // 导航栏
     nav: [
       { text: '首页', link: '/' },
+      { text: '前端', link: '/client/' },
     ],
+    sidebarDepth: 0, // 侧边栏深度
     //  侧边栏
-    sidebar: [
-      // 数组配置第一个参数是路径 /home/ 指的是 docs 文件夹下的home文件夹下的README.md
-      // 第二个参数是侧边栏标题
-      // ['/JavaScript/', 'JavaScript'],
-
-      // 对象配置： 是两级目录 title 是指侧边栏一级标题
-      // collapsable: false会让这个二级侧边栏一直展开
-      // children里的字段又是一个数组配置，参数含义如上
-      {
-        title: 'JavaScript',
-        collapsable: false,
-        children: [
-          ['/JavaScript/type', '类型']
-        ]
-      },
-      {
-        title: 'mxGraph',
-        collapsable: false,
-        children: [
-          //  路径  /mxGraph/mxGraph  指的是 docs 文件夹下的vue文件夹下的function-api.md
-          ['/mxGraph/mxGraph', 'mxGraph']
-        ]
-      }
-    ]
+    sidebar: {
+      // fallback
+      '/client/': [
+        {
+          title: "前端",
+          path: '/client/',
+          collapsable: false,
+          children: [
+            {
+              title: "JavaScript",
+              path: '/client/JavaScript/',
+              children:[
+                ["/client/JavaScript/type", 'type'],
+              ]
+            },
+            {
+              title: "mxGraph",
+              path: '/client/mxGraph/',
+              children:[
+                ["/client/mxGraph/mxGraph", 'mxGraph'],
+              ]
+            },
+          ]
+        },
+      ],
+    }
   },
 
 }
