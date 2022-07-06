@@ -1,2 +1,2 @@
-# 文档[https://qq843870301.github.io/]
+# [文档连接](https://qq843870301.github.io/)
 
